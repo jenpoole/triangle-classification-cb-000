@@ -11,7 +11,12 @@ class Triangle
   def kind
     if valid_triangle?
       # return, as a symbol, the triangle's type
-      # return :equilateral
+
+      # knows that equilateral triangles have equal sides
+      # knows that larger equilateral triangles also have equal sides
+      if side1 == side2 && side1 == side3
+        :equilateral
+      end
       # return :isosceles
       # return :scalene
     else
@@ -41,8 +46,7 @@ class TriangleError < StandardError
 end
 
 
-# knows that equilateral triangles have equal sides
-# knows that larger equilateral triangles also have equal sides
+
 
 # knows that isosceles triangles have last two sides equal
 # knows that isosceles triangles have first and last sides equal
