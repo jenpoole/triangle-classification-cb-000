@@ -22,8 +22,13 @@ class Triangle
       # knows that isosceles triangles have in fact exactly two sides equal
       elsif side1 == side2 || side1 == side3 || side2 == side3
         :isosceles
+      # knows that scalene triangles have no equal sides
+      # knows that scalene triangles have no equal sides at a larger scale too
+      # knows that scalene triangles have no equal sides in descending order either
+      # knows that very small triangles are legal
+      elsif side1 != side2 && side1 != side3 && side2 != side3
+        :scalene
       end
-      # return :scalene
     else
       # raise a custom error, TriangleError, if the triangle is invalid
       raise TriangleError
@@ -49,14 +54,3 @@ end
 # define custom error outside of the class definition of Triangle
 class TriangleError < StandardError
 end
-
-
-
-
-
-
-# knows that scalene triangles have no equal sides
-# knows that scalene triangles have no equal sides at a larger scale too
-# knows that scalene triangles have no equal sides in descending order either
-
-# knows that very small triangles are legal
