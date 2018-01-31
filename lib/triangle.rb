@@ -16,8 +16,13 @@ class Triangle
       # knows that larger equilateral triangles also have equal sides
       if side1 == side2 && side1 == side3
         :equilateral
+      # knows that isosceles triangles have last two sides equal
+      # knows that isosceles triangles have first and last sides equal
+      # knows that isosceles triangles have two first sides equal
+      # knows that isosceles triangles have in fact exactly two sides equal
+      elsif side1 == side2 || side1 == side3 || side2 == side3
+        :isosceles
       end
-      # return :isosceles
       # return :scalene
     else
       # raise a custom error, TriangleError, if the triangle is invalid
@@ -48,10 +53,7 @@ end
 
 
 
-# knows that isosceles triangles have last two sides equal
-# knows that isosceles triangles have first and last sides equal
-# knows that isosceles triangles have two first sides equal
-# knows that isosceles triangles have in fact exactly two sides equal
+
 
 # knows that scalene triangles have no equal sides
 # knows that scalene triangles have no equal sides at a larger scale too
